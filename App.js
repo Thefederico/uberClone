@@ -1,14 +1,15 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
 import {store} from './src/app/store';
+import {HomeScreen} from './src/screens/HomeScreen';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <View>
-        <Text>Hello World</Text>
-      </View>
+      <SafeAreaProvider>
+        <HomeScreen />
+      </SafeAreaProvider>
     </Provider>
   );
 };
