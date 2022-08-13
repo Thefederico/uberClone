@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, SafeAreaView, Image} from 'react-native';
 import tw from 'twrnc';
 import {NavOptions} from '../components/NavOptions';
+import {PlacesAutocomplete} from '../components/PlacesAutocomplete';
 
 function HomeScreen() {
   return (
@@ -11,6 +12,7 @@ function HomeScreen() {
           style={{width: 100, height: 100, resizeMode: 'contain'}}
           source={{uri: 'https://links.papareact.com/gzs'}}
         />
+        <PlacesAutocomplete />
         <NavOptions />
       </View>
     </SafeAreaView>
