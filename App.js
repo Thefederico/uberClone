@@ -1,4 +1,5 @@
 import React from 'react';
+import {KeyboardAvoidingView, Platform} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
@@ -10,7 +11,12 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <AppStack />
+          <KeyboardAvoidingView
+            style={{flex: 1}}
+            behavior={Platform.OS === 'android' ? 'height' : 'padding'}
+            keyboardVerticalOffset={Platform.OS === 'ios' ? -64 : 0}>
+            <AppStack />
+          </KeyboardAvoidingView>
         </SafeAreaProvider>
       </NavigationContainer>
     </Provider>
